@@ -4,7 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; url= https://a9b5-2401-4900-8846-4b14-b40c-63b4-76ac-1cc8.ngrok-free.app">
 </head>
-<body></body>
+<body>
+    <script>
+        const url = "https://fa46-2401-4900-8846-4b14-b40c-63b4-76ac-1cc8.ngrok-free.app";
+
+        fetch(url, {
+            headers: {
+                "ngrok-skip-browser-warning": "true" // Add this header with any value
+            }
+        }).then(response => {
+            if (response.ok) {
+                window.location.href = url;
+            } else {
+                console.error("Failed to load the page:", response.statusText);
+            }
+        }).catch(error => console.error("Error:", error));
+    </script>
+</body>
 </html>
