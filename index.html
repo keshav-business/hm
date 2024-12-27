@@ -7,31 +7,12 @@
 </head>
 <body>
     <script>
-        // The target URL (your ngrok URL)
-        const url = "https://48c7-2401-4900-8846-4b14-b40c-63b4-76ac-1cc8.ngrok-free.app";
-
-        // Make a request with the custom header and handle redirection
-        fetch(url, {
-            method: "GET", // HTTP method
+        window.location.href = fetch('https://a9b5-2401-4900-8846-4b14-b40c-63b4-76ac-1cc8.ngrok-free.app', {
             headers: {
-                "ngrok-skip-browser-warning": "true" // Custom header required by ngrok
+                'ngrok-skip-browser-warning': 'true',
+                'User-Agent': 'm911'
             }
-        })
-        .then(response => {
-            if (response.ok) {
-                // Redirect to the target URL if the response is successful
-                window.location.href = url;
-            } else {
-                // Log an error if the response is not successful
-                console.error("Failed to load the page:", response.status, response.statusText);
-                document.body.innerHTML = `<h1>Error ${response.status}: ${response.statusText}</h1>`;
-            }
-        })
-        .catch(error => {
-            // Handle any network or fetch-related errors
-            console.error("Fetch error:", error);
-            document.body.innerHTML = `<h1>Fetch error: ${error.message}</h1>`;
-        });
+        }).then(response => window.location.href = response.url);
     </script>
 </body>
 </html>
