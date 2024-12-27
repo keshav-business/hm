@@ -4,32 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
-    <script>
-        // Custom function to make a request with custom headers
-        function redirectToCustomURL() {
-            const url = "https://48c7-2401-4900-8846-4b14-b40c-63b4-76ac-1cc8.ngrok-free.app";
-
-            // Using Fetch API to set only the ngrok header
-            fetch(url, {
-                method: 'GET',
-                headers: {
-                    'ngrok-skip-browser-warning': 'true'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Redirect if the request is successful
-                    window.location.href = url;
-                } else {
-                    console.error('Failed to load the resource:', response.statusText);
-                }
-            })
-            .catch(error => console.error('Error:', error));
-        }
-
-        // Redirect on page load
-        window.onload = redirectToCustomURL;
-    </script>
+    <meta http-equiv="refresh" content="0; url=https://5d65-2401-4900-8846-4b14-b40c-63b4-76ac-1cc8.ngrok-free.app">
 </head>
 <body></body>
 </html>
